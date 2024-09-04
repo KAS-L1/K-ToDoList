@@ -6,6 +6,15 @@
     <title>To-Do List</title>
 </head>
 <body>
-    <h1>Hello</h1>
+    <div class="main-section">
+        <div class="add-section">
+            <form action="">
+                <input  type="text" 
+                        name="title" 
+                        placeholder="This field is required">
+                <button type="submit">Add &nbsp; <span>&#43;</span></button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
