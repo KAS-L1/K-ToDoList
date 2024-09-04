@@ -44,7 +44,7 @@
 
         <?php while($todo = $todos->fetch(PDO::FETCH_ASSOC)) { ?>
             <div class="todo-item">
-                <span id="<?= $todo['id'];?>"
+                <span data-id="<?= $todo['id'];?>"
                     class="remove-to-do">x</span>  
                 <?php if($todo['checked']) {?> 
                     <input type="checkbox"
@@ -66,20 +66,22 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script>
         $(document).ready(function(){
-            $('.remove-to-do').click(function(){
-                const id = $(this).attr('id');
-                
-                $.post("app/remove.php",
-                    {
-                        id: id
-                    },
-                    (data) => {
-                        alert(data);
-                        // if(data){}
-                    }
-                );
-            });
-        });
+    $('.remove-to-do').click(function(){
+        const id = $(this).data('id');
+        
+        $.post("app/remove.php",
+            {
+                id: id
+            },
+            (data) => {
+                // alert(data);
+                if(data){
+                    $(this).parent().hide(600);
+                }
+            }
+        );
+    });
+});
     </script>
 
 </body>
