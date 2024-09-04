@@ -23,8 +23,15 @@
         </div>
             <?php 
                 $todos = $conn->query("SELECT  * FROM todos ORDER BY id DESC");
-
             ?>
+            <div class="todo-item"> 
+                <?php if($todos->rowCount() === 0){ ?>
+                    <div class="empty">
+                        <img src="img/f.png" width="100%">
+                        <img src="img/Ellipsis.gif" width="100%">
+                    </div>
+            </div>
+        <?php } ?>    
         <div class="show-todo-section">
             <div class="todo-item">
                 <input type="checkbox">
