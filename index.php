@@ -1,3 +1,8 @@
+<?php
+    require 'db_conn.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +21,10 @@
                 <button type="submit">Add &nbsp; <span>&#43;</span></button>
             </form>
         </div>
+            <?php 
+                $todos = $conn->query("SELECT  * FROM todos ORDER BY id DESC");
+
+            ?>
         <div class="show-todo-section">
             <div class="todo-item">
                 <input type="checkbox">
