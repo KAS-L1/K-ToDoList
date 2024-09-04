@@ -68,7 +68,16 @@
         $(document).ready(function(){
             $('.remove-to-do').click(function(){
                 const id = $(this).attr('id');
-                alert(id);
+                
+                $.post("app/remove.php",
+                    {
+                        id: id
+                    },
+                    (data) => {
+                        alert(data);
+                        // if(data){}
+                    }
+                );
             });
         });
     </script>
