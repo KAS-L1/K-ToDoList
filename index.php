@@ -14,7 +14,7 @@
 <body>
     <class="main-section">
         <div class="add-section">
-            <form action="app/app.php" method="POST" autocomplete="off">
+            <form action="app/add.php" method="POST" autocomplete="off">
             <?php if (isset($_GET['mess']) && $_GET['mess'] == 'error'){?>
                 <input  type="text" 
                         name="title"
