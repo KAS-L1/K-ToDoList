@@ -15,6 +15,14 @@
                 <button type="submit">Add &nbsp; <span>&#43;</span></button>
             </form>
         </div>
+        <div class="show-todo-section">
+            <div class="todo-item">
+                <input type="checkbox">
+                <h2>This is nothing bitch</h2>
+                <br>
+                <small>created: <?php  echo date('Y-m-d H:i:s');?></small>
+            </div>
+        </div>
     </div>
 </body>
 </html>
