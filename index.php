@@ -15,6 +15,7 @@
     <class="main-section">
         <div class="add-section">
             <form action="app/app.php" method="POST" autocomplete="off">
+            <?php if (isset($_GET['mess']))?>  
                 <input  type="text" 
                         name="title" 
                         placeholder="This field is required">
