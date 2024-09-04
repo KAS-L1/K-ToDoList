@@ -15,11 +15,19 @@
     <class="main-section">
         <div class="add-section">
             <form action="app/app.php" method="POST" autocomplete="off">
-            <?php if (isset($_GET['mess']))?>  
+            <?php if (isset($_GET['mess']) && $_GET['mess'] == 'error'){?>
+                <input  type="text" 
+                        name="title"
+                        style="border-color: #ff6666;" 
+                        placeholder="This field is required">
+                <button type="submit">Add &nbsp; <span>&#43;</span></button>
+               
+                <?php } else{ ?>  
                 <input  type="text" 
                         name="title" 
                         placeholder="This field is required">
                 <button type="submit">Add &nbsp; <span>&#43;</span></button>
+            <?php }?>
             </form>
         </div>
             <?php 
@@ -32,7 +40,7 @@
                         <img src="img/Ellipsis.gif" width="80px">
                     </div>
             </div>
-        <?php } ?>  
+        <?php } ?> 
 
         <?php while($todo = $todos->fetch(PDO::FETCH_ASSOC)) { ?>
             <div class="todo-item">
